@@ -179,7 +179,7 @@ function showDivs(n) {
 
 						<!-- Intro -->
 							<section id="intro">
-								<a href="#" class="logo"><img src="images/logo.jpg" alt="" /></a>
+								<a href="#" class="logo"><img src="images/logo.jpg" /></a>
 								<header>
 									<h2>Computer Engineerring</h2>
 									<p>Wellcome <a href="http://html5up.net">HTML5 UP</a></p>
@@ -256,4 +256,3 @@ function showDivs(n) {
 
 	</body>
 </html>
-123
