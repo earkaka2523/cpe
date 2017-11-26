@@ -257,5 +257,3 @@ function showDivs(n) {
 	</body>
 </html>
 
-<!--kkk-->
-<!--nnn-->
