@@ -106,8 +106,8 @@
   </div>
 </div>
 
-<a class="w3-btn-floating w3-hover-dark-grey" style="position:absolute;top:52%;left:0" onclick="plusDivs(-1)">❮</a>
-<a class="w3-btn-floating w3-hover-dark-grey" style="position:absolute;top:52%;right:0" onclick="plusDivs(1)">❯</a>
+<a class="w3-btn-floating w3-hover-dark-grey" style="position:absolute;top:52%;left:0" onClick="plusDivs(-1)">❮</a>
+<a class="w3-btn-floating w3-hover-dark-grey" style="position:absolute;top:52%;right:0" onClick="plusDivs(1)">❯</a>
 
 </div>
 
@@ -258,3 +258,4 @@ function showDivs(n) {
 </html>
 
 <!--kkk-->
+<!--nnn-->
