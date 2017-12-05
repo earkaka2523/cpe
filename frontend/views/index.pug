@@ -1,0 +1,98 @@
+extends layout
+
+block content
+  //-- GET METHOD
+  script(type='text/javascript').
+    $(document).ready(function() {
+      $("#getBtn").click(function() {
+        $.ajax({
+          url: 'http://localhost:3000/api',
+          type: 'GET',
+          success: function(result) {
+            var html = "";
+            $.each(result, function(key, value) {
+              html += '<div class="dcell">';
+              html += 'name: ' + value.name + '<br/>';
+              html += 'Comment: ' + value.comment + '<br/>';
+              html += '</div>';
+            });
+            $("#result").html(html);
+          },
+          error: function() {
+            alert("[ERR] Get data from backend");
+          }
+        });
+      });
+    });
+
+  //-- POST METHOD
+  script(type='text/javascript').
+    $(document).ready(function() {
+      $("form").submit(function(event) {
+        event.preventDefault();
+        var formValue = $(this).serialize();
+        $.ajax({
+          url: 'http://localhost:3000/api',
+          type: 'POST',
+          data: formValue,
+          success: function(data) {
+            console.log("POST SUCCESS");
+            $("#result").html(data);
+          },
+          error: function() {
+            alert('failure');
+          }
+        });
+      });
+    });
+
+  //-- PUT METHOD
+  script(type='text/javascript').
+    $(document).ready(function() {
+      $("#putBtn").click(function(event) {
+        $.ajax({
+          url: 'http://localhost:3000/api',
+          type: 'PUT',
+          data: {name: 'KrisMT', lover: 'NIL'},
+          success: function(data) {
+            console.log("PUT SUCCESS");
+            $("#result").html(data);
+          },
+          error: function() {
+            alert('failure');
+          }
+        });
+      });
+    });
+
+  //-- DELETE METHOD
+  script(type='text/javascript').
+    $(document).ready(function() {
+      $("#deleteBtn").click(function(event) {
+        $.ajax({
+          url: 'http://localhost:3000/api',
+          type: 'DELETE',
+          data: {name: 'KrisMT', lover: 'NIL'},
+          success: function(data) {
+            console.log("DELETE SUCCESS");
+            $("#result").html(data);
+          },
+          error: function() {
+            alert('failure');
+          }
+        });
+      });
+    });
+  #result
+    h2 Content of the result DIV box will be replaced by the server date and time
+  |     
+  button(type='button' id='getBtn') GET
+  button(type='button' id='putBtn') PUT
+  button(type='button' id='deleteBtn') DELETE
+  |
+  form
+    label Name:
+      input(type="text" name="name")
+    label Comment:
+      textarea(col="50" name="comment")
+    input(type="submit" value="Send")
